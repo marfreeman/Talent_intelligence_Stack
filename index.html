@@ -55,7 +55,7 @@
             color: #fff;
             text-align: center;
             border-radius: 12px;
-            padding: 166px;
+            padding: 16px;
             position: fixed;
             z-index: 100;
             left: 50%;
@@ -105,7 +105,7 @@
         <!-- Controls -->
         <div class="mb-10 sticky top-4 z-40 bg-slate-950/80 backdrop-blur-xl p-6 rounded-2xl border border-slate-800 shadow-2xl flex flex-col gap-6">
             <div class="relative w-full">
-                <input type="text" id="searchInput" placeholder="Search 110+ high-quality tools (e.g., 'twitter', 'startup', 'identity', 'x-ray')..." 
+                <input type="text" id="searchInput" placeholder="search 180+ high quality tools" 
                     class="w-full pl-14 pr-4 py-4 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-lg"
                     onkeyup="filterTools()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-5 top-5 h-6 w-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -115,9 +115,9 @@
             
             <div class="flex flex-wrap gap-2" id="categoryFilters">
                 <button class="category-pill active px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="all">All</button>
-                <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="SERP">SERP</button>
                 <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="AI tools.">AI tools</button>
                 <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="OSINT">OSINT</button>
+                <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="SERP">SERP</button>
                 <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="Engineering">Engineering</button>
                 <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="Data">Contact Data</button>
                 <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="Reddit">Reddit/Forums</button>
@@ -140,147 +140,215 @@
 
         <!-- Footer -->
         <footer class="mt-24 py-16 border-t border-slate-900 text-center">
-            <p class="text-slate-500 font-semibold tracking-widest uppercase text-xs">Talent Intelligence Stack v4.9 • Verified & Custom Research Tools</p>
+            <p class="text-slate-500 font-semibold tracking-widest uppercase text-xs">Talent Intelligence Stack v5.6 • 185 Unique Verified Tools</p>
         </footer>
     </div>
 
     <script>
         const tools = [
-            // --- CUSTOM TOOLS (MARTIN FREEMAN) - ALWAYS FIRST ---
-            { name: "LeadSync Search", category: "Intel", description: "<span class='text-base font-bold text-slate-200'>Martin Freeman's</span> multi-area search tool for broad discovery across leads, technical talent, and corporate intelligence.", url: "https://marfreeman.github.io/LeadSync-Search/", tags: ["Custom", "Multi-Area", "LeadGen"] },
-
-            // --- SERP TOOLS ---
-            { name: "Devaka Tools", category: "SERP", description: "A javascript bookmarklet developed for SEOs, helping them auditing a websites.", url: "https://devakatalk.com/devaka-tools/", tags: ["SERP", "Bookmarklet", "SEO Audit"] },
+            // --- #1 CUSTOM TOOL (MARTIN FREEMAN) - ALWAYS FIRST ---
+            { name: "LeadSync Search", category: "Intel", description: "<span class='text-lg font-bold text-slate-100'>Martin Freeman's</span> multi-area search tool for broad discovery across leads, technical talent, and corporate intelligence.", url: "https://marfreeman.github.io/LeadSync-Search/", tags: ["Custom", "Multi-Area", "LeadGen"] },
 
             // --- AI TOOLS ---
             { name: "NotebookLM Prompts", category: "AI tools.", description: "Master collection of prompts for Google's NotebookLM to synthesize sourcing research.", url: "https://github.com/serenakeyitan/awesome-notebookLM-prompts", tags: ["AI", "Prompts"] },
-            { name: "Juicebox (PeopleGPT)", category: "AI tools.", description: "Natural language search engine for finding professionals via semantic AI queries.", url: "https://juicebox.ai", tags: ["AI", "Semantic Search"] },
-            { name: "Findem", category: "AI tools.", description: "Attribute-based AI finding talent based on career trajectory and diversity attributes.", url: "https://findem.ai", tags: ["AI", "Analytics"] },
-            { name: "SeekOut", category: "AI tools.", description: "Talent 360 platform combining public profiles with deep tech data and diversity filters.", url: "https://seekout.com", tags: ["AI", "Deep Search"] },
-            { name: "hireEZ", category: "AI tools.", description: "Outbound recruitment platform with AI-driven matching and sequence automation.", url: "https://hireez.com", tags: ["AI", "Matching"] },
-            { name: "Fetcher", category: "AI tools.", description: "Full-service sourcing automation that delivers pre-screened shortlists to your inbox.", url: "https://fetcher.ai", tags: ["AI", "Autopilot"] },
-            { name: "Gem", category: "AI tools.", description: "High-performance talent CRM with integrated sequence automation and analytics.", url: "https://gem.com", tags: ["CRM", "Sequence"] },
+            { name: "Alrite AI", category: "AI tools.", description: "AI-powered speech-to-text and translation tool for audio and video processing.", url: "https://alrite.io/ai/", tags: ["Transcription"] },
+            { name: "Andi Search", category: "AI tools.", description: "Next-generation generative search engine providing direct answers and summaries.", url: "https://andisearch.com/", tags: ["Search", "LLM"] },
+            { name: "AppSheet AI", category: "AI tools.", description: "Google's no-code platform to build custom AI-powered apps from your data.", url: "https://about.appsheet.com/home/", tags: ["No-Code"] },
+            { name: "Aragon AI", category: "AI tools.", description: "Professional AI headshot generator for LinkedIn and resume optimization.", url: "https://www.aragon.ai/", tags: ["Headshots"] },
+            { name: "Atlas Recruitment", category: "AI tools.", description: "Autonomous AI sourcing and scheduling agent for recruitment teams.", url: "https://www.recruitwithatlas.com/", tags: ["Agent"] },
+            { name: "AutoGPT", category: "AI tools.", description: "Autonomous GPT-4 experiments focused on task completion.", url: "https://autogpt.net/", tags: ["Autonomous"] },
+            { name: "Bardeen AI", category: "AI tools.", description: "Workflow automation tool for scraping data and managing sourcing tasks.", url: "https://www.bardeen.ai/", tags: ["Automation"] },
+            { name: "Bland AI", category: "AI tools.", description: "Conversational AI for phone calls and candidate screening.", url: "https://www.bland.ai/", tags: ["Voice"] },
+            { name: "Braintrust", category: "AI tools.", description: "AI-driven talent network for technical and design specialists.", url: "https://www.usebraintrust.com/", tags: ["Network"] },
+            { name: "BrightHire", category: "AI tools.", description: "Interview intelligence platform using AI to record and summarize candidate calls.", url: "https://brighthire.com/", tags: ["Interviews"] },
+            { name: "Carv AI", category: "AI tools.", description: "AI assistant for recruiters that automates meeting notes and summaries.", url: "https://www.carv.com/", tags: ["Assistant"] },
+            { name: "ChatGPT", category: "AI tools.", description: "Definitive LLM by OpenAI for creative writing, coding, and research.", url: "https://chatgpt.com/auth/login", tags: ["LLM"] },
+            { name: "Clay", category: "AI tools.", description: "AI-augmented relationship manager and data enrichment platform.", url: "https://www.clay.com/", tags: ["CRM", "AI"] },
+            { name: "Clay Earth", category: "AI tools.", description: "Personal and professional network manager powered by AI.", url: "https://clay.earth/", tags: ["Networking"] },
+            { name: "ConverzAI", category: "AI tools.", description: "Voice AI for high-volume recruitment screening calls.", url: "https://www.converzai.com/", tags: ["Voice"] },
+            { name: "Cronofy AI", category: "AI tools.", description: "AI scheduling assistant for complex interview loops.", url: "https://www.cronofy.com/", tags: ["Scheduling"] },
+            { name: "DeepSeek", category: "AI tools.", description: "High-performance reasoning and coding LLM for technical research.", url: "https://www.deepseek.com/", tags: ["LLM", "Tech"] },
+            { name: "ElevenLabs", category: "AI tools.", description: "AI voice generation and cloning for outreach scripts.", url: "https://elevenlabs.io/", tags: ["Voice"] },
+            { name: "Engage AI", category: "AI tools.", description: "Tool for writing relevant LinkedIn comments to warm up prospects.", url: "https://engage-ai.co/", tags: ["LinkedIn"] },
+            { name: "Epsilla", category: "AI tools.", description: "Vector database platform to build custom AI search over data.", url: "https://cloud.epsilla.com/", tags: ["RAG"] },
+            { name: "Fireflies.ai", category: "AI tools.", description: "AI voice assistant that transcribes and searches meeting notes.", url: "https://fireflies.ai/", tags: ["Transcription"] },
+            { name: "FlowiseAI", category: "AI tools.", description: "Low-code UI to build customized LLM orchestration flows.", url: "https://flowiseai.com/", tags: ["Workflow"] },
+            { name: "Folk AI", category: "AI tools.", description: "Modern AI-integrated CRM for pipeline management.", url: "https://www.folk.app/", tags: ["CRM"] },
+            { name: "Gemini", category: "AI tools.", description: "Google's multimodal AI for research and data analysis.", url: "https://gemini.google.com/", tags: ["Google"] },
+            { name: "Glider AI", category: "AI tools.", description: "AI-powered skill assessments and technical proctoring.", url: "https://glider.ai/", tags: ["Assessment"] },
+            { name: "GoodTime", category: "AI tools.", description: "Interview scheduling platform using AI availability matching.", url: "https://goodtime.io/", tags: ["Scheduling"] },
+            { name: "GPT for Sheets", category: "AI tools.", description: "ChatGPT and Gemini integration for Sheets and Docs.", url: "https://workspace.google.com/marketplace/app/gpt_for_sheets_and_docs/677318054654", tags: ["Productivity"] },
+            { name: "GPT Formula", category: "AI tools.", description: "AI assistant to write complex Excel and Sheets formulas.", url: "https://chromewebstore.google.com/detail/gpt-formula/kcleeabpbbmbcfgfdhobcincoeliffba", tags: ["Excel"] },
+            { name: "Groq", category: "AI tools.", description: "Ultra-fast AI inference engine for running LLMs at scale.", url: "https://groq.com/", tags: ["Speed"] },
+            { name: "hackajob", category: "AI tools.", description: "AI-powered tech hiring marketplace for employers.", url: "https://hackajob.com/employer", tags: ["Marketplace"] },
+            { name: "HeyGen", category: "AI tools.", description: "Create personalized video outreach at scale with AI avatars.", url: "https://www.heygen.com/", tags: ["Video"] },
+            { name: "HitPaw", category: "AI tools.", description: "AI-driven video and photo enhancement tool.", url: "https://www.hitpaw.com/hitpaw-video-enhancer.html", tags: ["Visual"] },
+            { name: "Jenni AI", category: "AI tools.", description: "AI writing assistant optimized for research content.", url: "https://jenni.ai/", tags: ["Writing"] },
+            { name: "Jobin.cloud", category: "AI tools.", description: "AI sourcing and LinkedIn automation dashboard.", url: "https://www.jobin.cloud/", tags: ["LinkedIn"] },
+            { name: "Keymate AI", category: "AI tools.", description: "Advanced AI search assistant that indexes personal data.", url: "https://www.keymate.ai/", tags: ["Search"] },
+            { name: "Kickresume AI", category: "AI tools.", description: "AI-powered resume and cover letter builder.", url: "https://www.kickresume.com/en/", tags: ["Resume"] },
+            { name: "Kula AI", category: "AI tools.", description: "Referral and sourcing automation platform.", url: "https://www.kula.ai/", tags: ["Referrals"] },
+            { name: "Magical AI", category: "AI tools.", description: "No-code automation agent for browser data syncing.", url: "https://chromewebstore.google.com/detail/magical-ai-agent-for-auto/iibninhmiggehlcdolcilmhacighjamp", tags: ["Productivity"] },
+            { name: "Metaview", category: "AI tools.", description: "AI-powered interview notes and summaries.", url: "https://www.metaview.ai/", tags: ["Interviews"] },
+            { name: "Midjourney", category: "AI tools.", description: "Premier AI image generation platform.", url: "https://www.midjourney.com/app", tags: ["Art"] },
+            { name: "Miro AI", category: "AI tools.", description: "AI assistant for mind maps and visual research.", url: "https://miro.com/ai/", tags: ["Design"] },
+            { name: "n8n AI", category: "AI tools.", description: "Build sophisticated AI pipelines with workflow automation.", url: "https://n8n.io/", tags: ["Workflow"] },
+            { name: "Napkin AI", category: "AI tools.", description: "Turns text into visuals and diagrams for reports.", url: "https://www.napkin.ai/", tags: ["Visuals"] },
+            { name: "Otter.ai", category: "AI tools.", description: "Real-time meeting transcription and AI summaries.", url: "https://otter.ai/", tags: ["Transcription"] },
+            { name: "Owler ChatGPT Plugin", category: "AI tools.", description: "Real-time company intelligence integrated with ChatGPT.", url: "https://corp.owler.com/blog/owler-launches-chatgpt-plugin-", tags: ["Intel"] },
+            { name: "PeopleGPT (Juicebox)", category: "AI tools.", description: "AI-driven people search engine using semantic queries.", url: "https://chat.juicebox.work/", tags: ["Search"] },
+            { name: "Perplexity", category: "AI tools.", description: "AI search companion providing sourced, real-time answers.", url: "https://www.perplexity.ai/", tags: ["Search"] },
+            { name: "Phind", category: "AI tools.", description: "Generative search engine built for developers.", url: "https://www.phind.com/", tags: ["Devs"] },
+            { name: "Poetry HR", category: "AI tools.", description: "AI recruiter workspace for sourcing operations.", url: "https://www.poetryhr.com/", tags: ["Workspace"] },
+            { name: "Popp AI", category: "AI tools.", description: "AI agent for candidate screening and processing.", url: "https://www.joinpopp.com/", tags: ["Agent"] },
+            { name: "Prog.ai", category: "AI tools.", description: "Developer sourcing using GitHub repo history.", url: "https://www.getprog.ai/", tags: ["Devs"] },
+            { name: "ReachOut AI", category: "AI tools.", description: "Automated video personalization for outreach.", url: "https://reachout.ai/", tags: ["Outreach"] },
+            { name: "RecruitBot", category: "AI tools.", description: "Combines 600M+ profiles with AI preference matching.", url: "https://recruitbot.com/", tags: ["Database"] },
+            { name: "RoundOne", category: "AI tools.", description: "AI-driven technical interviewing and assessments.", url: "https://roundone.ai/", tags: ["Interviews"] },
+            { name: "Scotty AI", category: "AI tools.", description: "Intelligent TA bot for high-volume engagement.", url: "https://scottytechnologies.com/scotty-ai-for-talent-acquisition/", tags: ["Bot"] },
+            { name: "Scribe AI", category: "AI tools.", description: "Documents sourcing processes into visual guides.", url: "https://scribehow.com/scribe-ai", tags: ["Docs"] },
+            { name: "Secta AI", category: "AI tools.", description: "Generates high-end business portraits with AI.", url: "https://secta.ai/", tags: ["Headshots"] },
+            { name: "SheetAI", category: "AI tools.", description: "Connect AI to Google Sheets for data cleanup.", url: "https://www.sheetai.app/", tags: ["Sheets"] },
+            { name: "Skillate", category: "AI tools.", description: "AI matching engine for screening and ranking.", url: "https://www.skillate.com/", tags: ["Matching"] },
+            { name: "Sourcicle", category: "AI tools.", description: "Sourcing automation platform for outbound recruiters.", url: "https://www.sourcicle.com/", tags: ["Automation"] },
+            { name: "Tactiq", category: "AI tools.", description: "Real-time transcriptions for recruiter calls.", url: "https://tactiq.io/roles/transcripts-for-recruiters", tags: ["Transcription"] },
+            { name: "Talent Protocol", category: "AI tools.", description: "On-chain talent search and aggregator.", url: "https://app.talentprotocol.com/search", tags: ["Identity"] },
+            { name: "Tengai", category: "AI tools.", description: "Unbiased AI interview bot for pre-screening.", url: "https://tengai.io/product", tags: ["Interviews"] },
+            { name: "Tengr.ai", category: "AI tools.", description: "High-performance AI image generation.", url: "https://tengr.ai/en", tags: ["Visual"] },
+            { name: "Textmetrics", category: "AI tools.", description: "AI writing tool for inclusive job descriptions.", url: "https://www.textmetrics.com/", tags: ["Writing"] },
+            { name: "TimelinesAI", category: "AI tools.", description: "AI WhatsApp management for recruiter teams.", url: "https://timelines.ai/", tags: ["Messaging"] },
+            { name: "Torre AI", category: "AI tools.", description: "Talent network using AI for job matching.", url: "https://torre.ai/", tags: ["Network"] },
+            { name: "Verbi", category: "AI tools.", description: "Meeting summarization and action items.", url: "https://goverbi.com/", tags: ["Meetings"] },
+            { name: "VoxScript", category: "AI tools.", description: "ChatGPT plugin for YouTube and web transcript search.", url: "https://chatgpt.com/g/g-g24EzkDta-voxscript", tags: ["Video"] },
+            { name: "Waalaxy", category: "AI tools.", description: "AI-powered LinkedIn lead generation automation.", url: "https://www.waalaxy.com/?o=nsdkvguepfqz", tags: ["LinkedIn"] },
+            { name: "Wolfram Alpha", category: "AI tools.", description: "Computational intelligence engine for deep data.", url: "https://www.wolframalpha.com/", tags: ["Data"] },
+            { name: "You.com", category: "AI tools.", description: "AI-integrated customized search engine.", url: "https://you.com/", tags: ["Search"] },
+            { name: "Zapier AI", category: "AI tools.", description: "Build automated workflows using natural language.", url: "https://zapier.com/ai", tags: ["Automation"] },
 
             // --- OSINT & IDENTITY ---
-            { name: "IntelTechniques", category: "OSINT", description: "Standard-setting investigative search tools for phone, address, and social identity.", url: "https://inteltechniques.com/tools/index.html", tags: ["Master", "Investigative"] },
-            { name: "OSINT Framework", category: "OSINT", description: "Massive directory of tools for usernames, emails, domains, and IP research.", url: "https://osintframework.com/", tags: ["Master List"] },
-            { name: "Lullar Search", category: "OSINT", description: "Social search aggregator covering 30+ platforms simultaneously.", url: "https://www.lullar.com/", tags: ["Aggregator"] },
-            { name: "Wayback Machine", category: "OSINT", description: "Recover deleted resumes or historical contact info via web archives.", url: "https://archive.org/web/", tags: ["History"] },
-            { name: "TinEye", category: "OSINT", description: "Reverse image search to locate where profile photos appear online.", url: "https://tineye.com/", tags: ["Images"] },
-            { name: "TruePeopleSearch", category: "OSINT", description: "US-based public records search for phone, email, and address history.", url: "https://www.truepeoplesearch.com/", tags: ["US Records"] },
-            { name: "Who.is", category: "OSINT", description: "Domain registration lookup to find owner and registrant contact data.", url: "https://who.is/", tags: ["Domain"] },
-            { name: "Melissa Lookups", category: "OSINT", description: "Global identity verification for address, phone, and professional profiles.", url: "https://www.melissa.com/v2/lookups/", tags: ["Personator"] },
-            { name: "Recruitem", category: "OSINT", description: "Boolean X-ray search builder for LinkedIn, Twitter, and StackOverflow.", url: "http://recruitem.net/", tags: ["X-ray"] },
-            { name: "Followerwonk", category: "OSINT", description: "Analyze and search Twitter bios by keywords and location.", url: "https://followerwonk.com/analyze", tags: ["Twitter"] },
+            { name: "IntelTechniques", category: "OSINT", description: "Standard investigative search tools for phone and address.", url: "https://inteltechniques.com/tools/index.html", tags: ["Investigative"] },
+            { name: "OSINT Framework", category: "OSINT", description: "Directory of tools for usernames, emails, and domains.", url: "https://osintframework.com/", tags: ["Master List"] },
+            { name: "Lullar Search", category: "OSINT", description: "Social search aggregator covering 30+ platforms.", url: "https://www.lullar.com/", tags: ["Aggregator"] },
+            { name: "Wayback Machine", category: "OSINT", description: "Recover deleted resumes via historical snapshots.", url: "https://archive.org/web/", tags: ["History"] },
+            { name: "TinEye", category: "OSINT", description: "Reverse image search for profile photo locations.", url: "https://tineye.com/", tags: ["Images"] },
+            { name: "TruePeopleSearch", category: "OSINT", description: "US records for phone, email, and address history.", url: "https://www.truepeoplesearch.com/", tags: ["US Records"] },
+            { name: "Who.is", category: "OSINT", description: "Domain registration lookup for contact data.", url: "https://who.is/", tags: ["Domain"] },
+            { name: "Melissa Lookups", category: "OSINT", description: "Global identity verification for professional profiles.", url: "https://www.melissa.com/v2/lookups/", tags: ["Verification"] },
+            { name: "Recruitem", category: "OSINT", description: "X-ray search builder for LinkedIn and Twitter.", url: "http://recruitem.net/", tags: ["X-ray"] },
+            { name: "Followerwonk", category: "OSINT", description: "Search Twitter bios by keywords and location.", url: "https://followerwonk.com/analyze", tags: ["Twitter"] },
             { name: "Social-Searcher", category: "OSINT", description: "Real-time search for social mentions and profiles.", url: "https://www.social-searcher.com/", tags: ["Aggregator"] },
-            { name: "Pipl", category: "OSINT", description: "Deep background search and identity verification platform.", url: "https://pipl.com/", tags: ["Identity"] },
-            { name: "Spokeo", category: "OSINT", description: "Aggregated identity search from online and offline data.", url: "https://www.spokeo.com/", tags: ["US People"] },
-            { name: "Namecheckr", category: "OSINT", description: "Cross-platform username search to identify candidate profiles.", url: "https://www.namecheckr.com/", tags: ["Identity"] },
-            { name: "Advangle", category: "OSINT", description: "Advanced boolean query builder for deep web searches.", url: "https://advangle.com/", tags: ["Boolean"] },
-            { name: "Alumni US", category: "OSINT", description: "Searchable alumni database covering US colleges.", url: "https://alumni.us/", tags: ["Education"] },
-            { name: "SpyOnWeb", category: "OSINT", description: "Find connected sites via IP address or tracking IDs.", url: "https://spyonweb.com/", tags: ["Connections"] },
-            { name: "Tinfoleak", category: "OSINT", description: "Detailed Twitter analysis for investigating account activity.", url: "https://tinfoleak.com/", tags: ["Social Intel"] },
-            { name: "Google Scholar", category: "OSINT", description: "Find published researchers, scientists, and PhDs.", url: "https://scholar.google.com", tags: ["Academic"] },
-            { name: "Phantombuster", category: "OSINT", description: "No-code automation for scraping and enriching profile data.", url: "https://phantombuster.com", tags: ["Scraping"] },
-            { name: "SearchPeopleFREE", category: "OSINT", description: "US public data for finding contact information for free.", url: "https://www.searchpeoplefree.com/", tags: ["US Records"] },
-            { name: "Public Records Directory", category: "OSINT", description: "Direct access to state, county, and local records.", url: "https://www.publicrecords.com/", tags: ["Official"] },
-            { name: "Thats Them", category: "OSINT", description: "Reverse lookup by IP, address, or email.", url: "https://thatsthem.com/", tags: ["Reverse"] },
-            { name: "Yasni People Search", category: "OSINT", description: "Aggregates social mentions and profile data across the web.", url: "https://www.yasni.com/", tags: ["Aggregator"] },
-            { name: "411.com", category: "OSINT", description: "Standard white pages search for US individuals.", url: "https://www.411.com/", tags: ["White Pages"] },
-            { name: "US Phone Book", category: "OSINT", description: "Find names and addresses associated with US phone numbers.", url: "https://www.usphonebook.com/", tags: ["Phone Lookup"] },
-            { name: "DomainBigData", category: "OSINT", description: "Comprehensive domain and registrant research including historical WHOIS.", url: "https://domainbigdata.com/", tags: ["Domain Intel"] },
+            { name: "Pipl", category: "OSINT", description: "Identity research and verification platform.", url: "https://pipl.com/", tags: ["Identity"] },
+            { name: "Spokeo", category: "OSINT", description: "Aggregated identity search from offline data.", url: "https://www.spokeo.com/", tags: ["US People"] },
+            { name: "Namecheckr", category: "OSINT", description: "Username availability to identify candidate clones.", url: "https://www.namecheckr.com/", tags: ["Identity"] },
+            { name: "Advangle", category: "OSINT", description: "Advanced boolean query builder for deep web.", url: "https://advangle.com/", tags: ["Boolean"] },
+            { name: "Alumni US", category: "OSINT", description: "Searchable alumni database for US colleges.", url: "https://alumni.us/", tags: ["Education"] },
+            { name: "SpyOnWeb", category: "OSINT", description: "Identify connected sites via IP tracking IDs.", url: "https://spyonweb.com/", tags: ["Deep Research"] },
+            { name: "Tinfoleak", category: "OSINT", description: "Detailed Twitter activity analysis.", url: "https://tinfoleak.com/", tags: ["Social Intel"] },
+            { name: "Google Scholar", category: "OSINT", description: "Find published researchers and PhDs.", url: "https://scholar.google.com", tags: ["Academic"] },
+            { name: "Phantombuster", category: "OSINT", description: "Automation for scraping and enriching profile data.", url: "https://phantombuster.com", tags: ["Scraping"] },
+            { name: "SearchPeopleFREE", category: "OSINT", description: "US public data for finding free contact info.", url: "https://www.searchpeoplefree.com/", tags: ["US Records"] },
+            { name: "Public Records Directory", category: "OSINT", description: "Access to state, county, and local records.", url: "https://www.publicrecords.com/", tags: ["Official"] },
+            { name: "Thats Them", category: "OSINT", description: "Reverse lookup by IP or email.", url: "https://thatsthem.com/", tags: ["Reverse"] },
+            { name: "Yasni People Search", category: "OSINT", description: "Aggregates social mentions across the web.", url: "https://www.yasni.com/", tags: ["Aggregator"] },
+            { name: "411.com", category: "OSINT", description: "Standard white pages for US individuals.", url: "https://www.411.com/", tags: ["White Pages"] },
+            { name: "US Phone Book", category: "OSINT", description: "Names and addresses from US phone numbers.", url: "https://www.usphonebook.com/", tags: ["Phone"] },
+            { name: "DomainBigData", category: "OSINT", description: "Domain research and WHOIS history.", url: "https://domainbigdata.com/", tags: ["Domain Intel"] },
 
-            // --- REDDIT & FORUMS ---
-            { name: "Reddit User X-Ray", category: "Reddit", description: "X-ray string for locating Reddit user profiles via Google.", url: "https://www.google.com/search?q=site:reddit.com/user/+", tags: ["X-ray"] },
-            { name: "RedditSearch.io", category: "Reddit", description: "Historical search for specific Reddit posts and comments.", url: "https://redditsearch.io", tags: ["History"] },
-            { name: "BoardReader", category: "Reddit", description: "Global forum search engine covering boards beyond Reddit.", url: "https://boardreader.com/", tags: ["Forums"] },
-            { name: "Reddit Niche Search", category: "Reddit", description: "Find private Discord/Slack community invites on Reddit.", url: "https://www.google.com/search?q=site:reddit.com+%22join+our+discord%22", tags: ["Communities"] },
-            { name: "Reddit Resume X-Ray", category: "Reddit", description: "X-ray search for resumes and portfolios shared on Reddit.", url: "https://www.google.com/search?q=site:reddit.com+(resume+OR+portfolio+OR+CV)", tags: ["X-ray"] },
+            // --- SERP TOOLS ---
+            { name: "Devaka Tools", category: "SERP", description: "A javascript bookmarklet developed for SEOs, helping them auditing a websites.", url: "https://devakatalk.com/devaka-tools/", tags: ["SERP", "Audit"] },
+
+            // --- REDDIT ---
+            { name: "Reddit User X-Ray", category: "Reddit", description: "Google X-ray for locating Reddit user profiles.", url: "https://www.google.com/search?q=site:reddit.com/user/+", tags: ["X-ray"] },
+            { name: "RedditSearch.io", category: "Reddit", description: "Historical search for Reddit posts/comments.", url: "https://redditsearch.io", tags: ["History"] },
+            { name: "BoardReader", category: "Reddit", description: "Global forum search engine beyond Reddit.", url: "https://boardreader.com/", tags: ["Forums"] },
+            { name: "Reddit Niche Search", category: "Reddit", description: "Find private community invites on Reddit.", url: "https://www.google.com/search?q=site:reddit.com+%22join+our+discord%22", tags: ["Communities"] },
+            { name: "Reddit Resume X-Ray", category: "Reddit", description: "Search for resumes/portfolios on Reddit.", url: "https://www.google.com/search?q=site:reddit.com+(resume+OR+portfolio+OR+CV)", tags: ["X-ray"] },
 
             // --- ENGINEERING ---
-            { name: "AmazingHiring", category: "Engineering", description: "Search across GitHub, StackOverflow, GitLab, and Kaggle.", url: "https://amazinghiring.com", tags: ["Aggregator"] },
-            { name: "GitHub Advanced Search", category: "Engineering", description: "Deep filters for dev language, location, and activity.", url: "https://github.com/search/advanced", tags: ["Devs"] },
-            { name: "StackShare", category: "Engineering", description: "Source engineers by mapping company technology stacks.", url: "https://stackshare.io/", tags: ["Stack Mapping"] },
-            { name: "Cord.io", category: "Engineering", description: "Verified tech talent actively open to new roles.", url: "https://cord.co", tags: ["Active"] },
-            { name: "Human Predictions", category: "Engineering", description: "Predictive AI for identifying tech talent move-probability.", url: "https://www.humanpredictions.io/", tags: ["Predictive"] },
-            { name: "Exercism Profiles", category: "Engineering", description: "Find active coders and mentors via Exercism.", url: "https://exercism.io/profiles", tags: ["Coding"] },
-            { name: "HackerRank X-Ray", category: "Engineering", description: "Locate technical profiles on HackerRank via Google.", url: "https://www.google.com/search?q=site:hackerrank.com/profile", tags: ["X-ray"] },
-            { name: "GitLab X-Ray", category: "Engineering", description: "Source engineering talent directly from GitLab repositories.", url: "https://www.google.com/search?q=site:gitlab.com", tags: ["X-ray"] },
-            { name: "StackOverflow X-Ray", category: "Engineering", description: "Search for high-karma users in specific tech tags.", url: "https://www.google.com/search?q=site:stackoverflow.com/users", tags: ["Community"] },
-            { name: "Codeable", category: "Engineering", description: "Niche community of WordPress and PHP experts.", url: "https://codeable.io/developers", tags: ["PHP"] },
-            { name: "StackShare Sourcing", category: "Engineering", description: "X-ray search for 'my stack' posts on StackShare.", url: "https://www.google.com/search?q=site:stackshare.io+inurl:my+stack", tags: ["X-ray"] },
-            { name: "Exercism X-Ray", category: "Engineering", description: "Find profiles on Exercism focusing on specific languages.", url: "https://www.google.com/search?q=site:exercism.io/profiles", tags: ["X-ray"] },
-            { name: "Github Email Finder", category: "Engineering", description: "Extension to extract public emails from GitHub commits.", url: "https://chrome.google.com/webstore/detail/github-emails-finder-expo/ocidmelfjjmbibmhlnooildbiookoebh", tags: ["Extension"] },
+            { name: "AmazingHiring", category: "Engineering", description: "Search across GitHub, GitLab, and Kaggle.", url: "https://amazinghiring.com", tags: ["Aggregator"] },
+            { name: "GitHub Advanced Search", category: "Engineering", description: "Filters for language, stars, and commits.", url: "https://github.com/search/advanced", tags: ["Devs"] },
+            { name: "StackShare", category: "Engineering", description: "Source engineers by mapping technology stacks.", url: "https://stackshare.io/", tags: ["Stack Mapping"] },
+            { name: "Cord.io", category: "Engineering", description: "Verified tech talent actively open to roles.", url: "https://cord.co", tags: ["Active"] },
+            { name: "Human Predictions", category: "Engineering", description: "AI move-probability for tech talent.", url: "https://www.humanpredictions.io/", tags: ["Predictive"] },
+            { name: "Exercism Profiles", category: "Engineering", description: "Find coders by mentor and contribution history.", url: "https://exercism.io/profiles", tags: ["Coding"] },
+            { name: "HackerRank X-Ray", category: "Engineering", description: "Locate technical profiles on HackerRank.", url: "https://www.google.com/search?q=site:hackerrank.com/profile", tags: ["X-ray"] },
+            { name: "GitLab X-Ray", category: "Engineering", description: "Source talent from GitLab repositories.", url: "https://www.google.com/search?q=site:gitlab.com", tags: ["X-ray"] },
+            { name: "StackOverflow X-Ray", category: "Engineering", description: "Source high-karma users in specific tags.", url: "https://www.google.com/search?q=site:stackoverflow.com/users", tags: ["Community"] },
+            { name: "Codeable", category: "Engineering", description: "WordPress and PHP expert community.", url: "https://codeable.io/developers", tags: ["PHP"] },
+            { name: "Github Email Finder", category: "Engineering", description: "Extract emails from GitHub commits.", url: "https://chrome.google.com/webstore/detail/github-emails-finder-expo/ocidmelfjjmbibmhlnooildbiookoebh", tags: ["Extension"] },
 
             // --- DATA & CONTACT ---
-            { name: "ContactOut", category: "Data", description: "Highly accurate email/phone finder for LinkedIn and search.", url: "https://contactout.com", tags: ["Premium"] },
-            { name: "SignalHire", category: "Data", description: "Verified contact data and talent analytics dashboard.", url: "https://signalhire.com", tags: ["Enrichment"] },
-            { name: "Apollo.io", category: "Data", description: "Massive B2B contact database with outreach sequences.", url: "https://apollo.io", tags: ["Database"] },
-            { name: "Hunter.io", category: "Data", description: "Find and verify professional email addresses by domain.", url: "https://hunter.io", tags: ["Verification"] },
-            { name: "Swordfish", category: "Data", description: "Finds verified cell phone numbers and personal emails.", url: "https://swordfish.ai/", tags: ["Mobile focus"] },
-            { name: "Nymeria", category: "Data", description: "Extension for finding personal emails on GitHub and LinkedIn.", url: "https://www.nymeria.io/", tags: ["Email discovery"] },
-            { name: "RocketReach", category: "Data", description: "Massive professional email and phone number database.", url: "https://rocketreach.co", tags: ["B2B"] },
-            { name: "AnyMailFinder", category: "Data", description: "Verified work emails; you only pay for deliverable hits.", url: "https://anymailfinder.com", tags: ["Verify"] },
-            { name: "Lusha", category: "Data", description: "B2B contact data tool for sales and recruiting outreach.", url: "https://lusha.com", tags: ["Leads"] },
-            { name: "Snov.io", category: "Data", description: "Email finder and automated outreach platform.", url: "https://snov.io/", tags: ["Automation"] },
-            { name: "Skrapp", category: "Data", description: "LinkedIn email extractor for professional profiles.", url: "https://skrapp.io/", tags: ["Extension"] },
-            { name: "Clay", category: "Data", description: "Workflow automation for data enrichment and outreach.", url: "https://clay.com", tags: ["Workflow"] },
-            { name: "FindEmails.com", category: "Data", description: "Email finder and verification tool for outreach lists.", url: "https://www.findemails.com/", tags: ["Email"] },
-            { name: "Precontact Tool", category: "Data", description: "Discover contact information before reaching out.", url: "https://precontact.com/", tags: ["Intel"] },
-            { name: "SpyTox", category: "Data", description: "Reverse lookup and contact discovery platform.", url: "https://www.spytox.com/", tags: ["Reverse Search"] },
-            { name: "Xlek.com", category: "Data", description: "Data enrichment tool for profile investigation.", url: "https://xlek.com/", tags: ["Enrichment"] },
-            { name: "LeadVantage", category: "Data", description: "Lead generation and contact discovery platform.", url: "https://leadvantagellc.com/", tags: ["Leads"] },
-            { name: "Nuwber", category: "Data", description: "Public records search for contact and background data.", url: "https://nuwber.com/", tags: ["Public Data"] },
+            { name: "ContactOut", category: "Data", description: "Accurate email/phone finder for LinkedIn.", url: "https://contactout.com", tags: ["Premium"] },
+            { name: "SignalHire", category: "Data", description: "Verified contact data and talent analytics.", url: "https://signalhire.com", tags: ["Enrichment"] },
+            { name: "Apollo.io", category: "Data", description: "Massive 270M+ B2B contact database.", url: "https://apollo.io", tags: ["Database"] },
+            { name: "Hunter.io", category: "Data", description: "Verify professional emails by domain.", url: "https://hunter.io", tags: ["Verification"] },
+            { name: "Swordfish", category: "Data", description: "Finds verified cell numbers and personal emails.", url: "https://swordfish.ai/", tags: ["Mobile"] },
+            { name: "Nymeria", category: "Data", description: "Extension for personal emails on GitHub.", url: "https://www.nymeria.io/", tags: ["Dev focus"] },
+            { name: "RocketReach", category: "Data", description: "Professional email and phone database.", url: "https://rocketreach.co", tags: ["B2B"] },
+            { name: "AnyMailFinder", category: "Data", description: "Verified emails; pay for deliverable hits.", url: "https://anymailfinder.com", tags: ["Verify"] },
+            { name: "Lusha", category: "Data", description: "B2B contact data tool for sales/recruiting.", url: "https://lusha.com", tags: ["Leads"] },
+            { name: "Snov.io", category: "Data", description: "Email finder and outreach automation.", url: "https://snov.io/", tags: ["Automation"] },
+            { name: "Skrapp", category: "Data", description: "LinkedIn email extractor for profiles.", url: "https://skrapp.io/", tags: ["Extension"] },
+            { name: "FindEmails.com", category: "Data", description: "Email verification tool for outreach lists.", url: "https://www.findemails.com/", tags: ["Email"] },
+            { name: "Precontact Tool", category: "Data", description: "Discover contact info before reaching out.", url: "https://precontact.com/", tags: ["Intel"] },
+            { name: "SpyTox", category: "Data", description: "Reverse lookup and contact discovery.", url: "https://www.spytox.com/", tags: ["Reverse"] },
+            { name: "Xlek.com", category: "Data", description: "Data enrichment for profile investigation.", url: "https://xlek.com/", tags: ["Enrichment"] },
+            { name: "LeadVantage", category: "Data", description: "Lead generation and discovery platform.", url: "https://leadvantagellc.com/", tags: ["Leads"] },
+            { name: "Nuwber", category: "Data", description: "Public records search for contact/background.", url: "https://nuwber.com/", tags: ["Public Data"] },
+            { name: "Wiza", category: "Data", description: "Verified emails from LinkedIn Navigator.", url: "https://wiza.co/", tags: ["LinkedIn"] },
+            { name: "GetProspect", category: "Data", description: "LinkedIn email finder and lead management.", url: "https://getprospect.com/", tags: ["Leads"] },
+            { name: "Kaspr", category: "Data", description: "Get contact info (phone/email) from LinkedIn.", url: "https://www.kaspr.io/", tags: ["Sales"] },
 
             // --- INTEL & MARKET ---
-            { name: "Levels.fyi", category: "Intel", description: "The industry standard for benchmarking salaries and leveling.", url: "https://www.levels.fyi/", tags: ["Salary"] },
-            { name: "Owler", category: "Intel", description: "Competitive intelligence on private and public companies.", url: "https://www.owler.com/", tags: ["Company Intel"] },
-            { name: "Crunchbase", category: "Intel", description: "Startup funding data, founders, and headcount news.", url: "https://www.crunchbase.com/", tags: ["Funding"] },
-            { name: "TheLayoff", category: "Intel", description: "Track layoff signals to identify new candidate pools.", url: "https://www.thelayoff.com/", tags: ["Market Signals"] },
-            { name: "AcquiredBy", category: "Intel", description: "Definitive list of tech acquisitions for tracking talent.", url: "https://acquiredby.com/", tags: ["Acquisitions"] },
+            { name: "Levels.fyi", category: "Intel", description: "Standard for benchmarking salaries and leveling.", url: "https://www.levels.fyi/", tags: ["Salary"] },
+            { name: "Owler", category: "Intel", description: "Competitive intelligence on private companies.", url: "https://www.owler.com/", tags: ["Intel"] },
+            { name: "Crunchbase", category: "Intel", description: "Startup funding and headcount news.", url: "https://www.crunchbase.com/", tags: ["Funding"] },
+            { name: "TheLayoff", category: "Intel", description: "Track layoff signals for new candidate pools.", url: "https://www.thelayoff.com/", tags: ["Signals"] },
+            { name: "AcquiredBy", category: "Intel", description: "List of tech acquisitions for tracking talent.", url: "https://acquiredby.com/", tags: ["Acquisitions"] },
             { name: "Growjo", category: "Intel", description: "Track the fastest-growing companies in tech.", url: "https://growjo.com/", tags: ["Growth"] },
-            { name: "BuiltWith", category: "Intel", description: "Analyze the technology stack behind any website.", url: "https://builtwith.com/", tags: ["Tech Stack"] },
-            { name: "Zippia", category: "Intel", description: "Employee demographics, titles, and tenure benchmarking.", url: "https://www.zippia.com/", tags: ["Demographics"] },
-            { name: "Comparably", category: "Intel", description: "Compare culture and compensation across top tech companies.", url: "https://www.comparably.com/", tags: ["Culture"] },
-            { name: "Relationship Science", category: "Intel", description: "Map influence and relationships between professional leaders.", url: "https://relationshipscience.com/", tags: ["Leadership"] },
-            { name: "F6S", category: "Intel", description: "Startup platform for founders and early-stage employees.", url: "https://www.f6s.com/", tags: ["Community"] },
-            { name: "Buzzfile X-Ray", category: "Intel", description: "Find businesses and potential talent pools via Buzzfile.", url: "https://www.google.com/search?q=site:buzzfile.com/business/", tags: ["X-ray"] },
-            { name: "Glassdoor Salary X-Ray", category: "Intel", description: "Direct search for company salary brackets via Glassdoor.", url: "https://www.google.com/search?q=site:glassdoor.com/salary", tags: ["X-ray"] },
-            { name: "ILOSTAT", category: "Intel", description: "Global labor market data and statistics.", url: "https://ilostat.ilo.org/", tags: ["Global"] },
-            { name: "Winmo", category: "Intel", description: "Sales intelligence and decision-maker contact discovery.", url: "https://www.winmo.com/", tags: ["Sales Intel"] },
+            { name: "BuiltWith", category: "Intel", description: "Analyze technology stacks behind any site.", url: "https://builtwith.com/", tags: ["Tech Stack"] },
+            { name: "Zippia", category: "Intel", description: "Employee demographics and tenure benchmarks.", url: "https://www.zippia.com/", tags: ["Demographics"] },
+            { name: "Comparably", category: "Intel", description: "Compare culture across top tech companies.", url: "https://www.comparably.com/", tags: ["Culture"] },
+            { name: "Relationship Science", category: "Intel", description: "Map influence between professional leaders.", url: "https://relationshipscience.com/", tags: ["Leadership"] },
+            { name: "F6S", category: "Intel", description: "Startup platform for early-stage employees.", url: "https://www.f6s.com/", tags: ["Community"] },
+            { name: "Buzzfile X-Ray", category: "Intel", description: "Find businesses and potential talent pools.", url: "https://www.google.com/search?q=site:buzzfile.com/business/", tags: ["X-ray"] },
+            { name: "Glassdoor Salary X-Ray", category: "Intel", description: "Direct search for company salary brackets.", url: "https://www.google.com/search?q=site:glassdoor.com/salary", tags: ["X-ray"] },
+            { name: "Winmo", category: "Intel", description: "Decision-maker contact discovery.", url: "https://www.winmo.com/", tags: ["Sales Intel"] },
+            { name: "Seamless.ai", category: "Intel", description: "Real-time search engine for B2B contact info.", url: "https://seamless.ai/", tags: ["Sales"] },
+            { name: "Crystal Knows", category: "Intel", description: "AI personality profiles for communication.", url: "https://www.crystalknows.com/", tags: ["Personality"] },
 
-            // --- VERIFICATION ---
-            { name: "Antideo", category: "Verify", description: "Phone, email, and IP validation to prevent outreach bounces.", url: "https://www.antideo.com/", tags: ["Validation"] },
-            { name: "HaveIBeenPwned", category: "Verify", description: "Check email breach history to verify age and activity.", url: "https://haveibeenpwned.com/", tags: ["Email Age"] },
-            { name: "MillionVerifier", category: "Verify", description: "Bulk email verification for large candidate lists.", url: "https://www.millionverifier.com/", tags: ["Bulk Verify"] },
-            { name: "Simple Email Reputation", category: "Verify", description: "Check reputation and spam scores for any email address.", url: "https://emailrep.io/", tags: ["Reputation"] },
-            { name: "Email Hippo", category: "Verify", description: "Real-time email validation and threat analysis.", url: "https://www.emailhippo.com/", tags: ["Verify"] },
-            { name: "Mailtester", category: "Verify", description: "Verify email existence without sending a message.", url: "https://mailtester.com/", tags: ["Check"] },
-            { name: "IP2Location", category: "Verify", description: "Trace email headers and IP addresses to source origin.", url: "https://www.ip2location.com/free/email-tracer", tags: ["Tracing"] },
-            { name: "National Cellular Directory", category: "Verify", description: "Search for phone numbers and background data.", url: "https://www.nationalcellulardirectory.com/", tags: ["Phone Verify"] },
+            // --- VERIFY ---
+            { name: "Antideo", category: "Verify", description: "Phone, email, and IP validation.", url: "https://www.antideo.com/", tags: ["Validation"] },
+            { name: "HaveIBeenPwned", category: "Verify", description: "Check email breach history.", url: "https://haveibeenpwned.com/", tags: ["Age"] },
+            { name: "MillionVerifier", category: "Verify", description: "Bulk email verification for lists.", url: "https://www.millionverifier.com/", tags: ["Bulk"] },
+            { name: "Simple Email Reputation", category: "Verify", description: "Check reputation and spam scores.", url: "https://emailrep.io/", tags: ["Reputation"] },
+            { name: "Email Hippo", category: "Verify", description: "Real-time validation and threat analysis.", url: "https://www.emailhippo.com/", tags: ["Verify"] },
+            { name: "Mailtester", category: "Verify", description: "Verify email existence without sending.", url: "https://mailtester.com/", tags: ["Check"] },
+            { name: "IP2Location", category: "Verify", description: "Trace email headers and IP addresses.", url: "https://www.ip2location.com/free/email-tracer", tags: ["Tracing"] },
+            { name: "National Cellular Directory", category: "Verify", description: "Phone numbers and background data.", url: "https://www.nationalcellulardirectory.com/", tags: ["Phone"] },
 
-            // --- OUTREACH & WRITING ---
-            { name: "Textio", category: "Outreach", description: "AI writing guide for crafting inclusive, converting outreach.", url: "https://textio.com/", tags: ["AI Writing"] },
-            { name: "QuillBot", category: "Outreach", description: "AI paraphraser for personalizing outreach templates.", url: "https://quillbot.com/", tags: ["Personalization"] },
-            { name: "Readable", category: "Outreach", description: "Readability scoring to ensure clear outreach communication.", url: "https://readable.com/", tags: ["Clarity"] },
-            { name: "Joblint", category: "Outreach", description: "Scan job posts and outreach for bias and jargon.", url: "https://github.com/rowanmanning/joblint", tags: ["Review"] },
-            { name: "TestSubject", category: "Outreach", description: "Test how your email subject line appears on mobile.", url: "https://testsubject.com/", tags: ["Email Testing"] },
+            // --- OUTREACH ---
+            { name: "Textio", category: "Outreach", description: "AI writing guide for converting outreach.", url: "https://textio.com/", tags: ["Writing"] },
+            { name: "QuillBot", category: "Outreach", description: "AI paraphraser for personalizing templates.", url: "https://quillbot.com/", tags: ["Personalization"] },
+            { name: "Readable", category: "Outreach", description: "Readability scoring for clear outreach.", url: "https://readable.com/", tags: ["Clarity"] },
+            { name: "Joblint", category: "Outreach", description: "Scan job posts for bias and jargon.", url: "https://github.com/rowanmanning/joblint", tags: ["Review"] },
+            { name: "TestSubject", category: "Outreach", description: "Test how subject lines appear on mobile.", url: "https://testsubject.com/", tags: ["Testing"] },
 
-            // --- DESIGN & CREATIVE ---
-            { name: "Dribbble Hiring", category: "Creative", description: "Search designers by skill, location, and hire-ready status.", url: "https://dribbble.com/hiring", tags: ["Visual"] },
-            { name: "Layers.to", category: "Creative", description: "Fresh community for early-stage and emerging design talent.", url: "https://layers.to", tags: ["Emerging"] },
-            { name: "Contra", category: "Creative", description: "Portfolio-based community for freelance and full-time.", url: "https://contra.com", tags: ["Freelance"] },
-            { name: "Behance", category: "Creative", description: "Adobe's professional network for creative portfolios.", url: "https://behance.net", tags: ["Portfolio"] },
-            { name: "Instagram X-Ray", category: "Creative", description: "Locate designers and creative influencers via Instagram.", url: "https://www.google.com/search?q=site:instagram.com+email", tags: ["X-ray"] },
-            { name: "TikTok Dev X-Ray", category: "Creative", description: "Find developers and creatives sharing work on TikTok.", url: "https://www.google.com/search?q=site:tiktok.com+%22developer%22", tags: ["X-ray"] },
-            { name: "Pinterest Portfolio Search", category: "Creative", description: "Source designers and visual artists via Pinterest boards.", url: "https://www.google.com/search?q=site:pinterest.com+portfolio", tags: ["X-ray"] },
+            // --- DESIGN ---
+            { name: "Dribbble Hiring", category: "Design", description: "Search designers by skill and hire-status.", url: "https://dribbble.com/hiring", tags: ["Visual"] },
+            { name: "Layers.to", category: "Design", description: "Community for emerging design talent.", url: "https://layers.to", tags: ["Emerging"] },
+            { name: "Contra", category: "Design", description: "Portfolio-based community for freelance.", url: "https://contra.com", tags: ["Freelance"] },
+            { name: "Behance", category: "Design", description: "Professional network for creative portfolios.", url: "https://behance.net", tags: ["Adobe"] },
+            { name: "Instagram X-Ray", category: "Design", description: "Locate designers via Instagram.", url: "https://www.google.com/search?q=site:instagram.com+email", tags: ["X-ray"] },
+            { name: "TikTok Dev X-Ray", category: "Design", description: "Find developers sharing work on TikTok.", url: "https://www.google.com/search?q=site:tiktok.com+%22developer%22", tags: ["X-ray"] },
+            { name: "Pinterest Portfolio Search", category: "Design", description: "Source visual artists via Pinterest boards.", url: "https://www.google.com/search?q=site:pinterest.com+portfolio", tags: ["X-ray"] },
 
             // --- MISC & X-RAY ---
-            { name: "LinkedIn Clearance X-Ray", category: "Intel", description: "Source candidates with specific security clearances on LinkedIn.", url: "https://www.google.com/search?q=site:linkedin.com/in+%22security+clearance%22", tags: ["Security"] },
-            { name: "FTP Resume Search", category: "Intel", description: "X-ray search for publicly available resumes on FTP servers.", url: "https://www.google.com/search?q=intitle:index.of+resume", tags: ["X-ray"] },
-            { name: "Conference Attendee X-Ray", category: "Intel", description: "X-ray search for attendee lists and speakers.", url: "https://www.google.com/search?q=intitle:attendee.list", tags: ["Events"] },
-            { name: "Upwork Profile Search", category: "Data", description: "X-ray Upwork to find high-rated freelance profiles.", url: "https://www.google.com/search?q=site:upwork.com/o/profiles", tags: ["X-ray"] },
-            { name: "Freelancer Profile Search", category: "Data", description: "X-ray Freelancer.com to find professional profiles.", url: "https://www.google.com/search?q=site:freelancer.com/u", tags: ["X-ray"] }
+            { name: "LinkedIn Clearance X-Ray", category: "Intel", description: "Source candidates with specific security clearances.", url: "https://www.google.com/search?q=site:linkedin.com/in+%22security+clearance%22", tags: ["Security"] },
+            { name: "FTP Resume Search", category: "Intel", description: "Search for resumes on FTP servers.", url: "https://www.google.com/search?q=intitle:index.of+resume", tags: ["X-ray"] },
+            { name: "Conference Attendee X-Ray", category: "Intel", description: "X-ray search for attendee lists.", url: "https://www.google.com/search?q=intitle:attendee.list", tags: ["Events"] },
+            { name: "Upwork Profile Search", category: "Data", description: "X-ray Upwork to find high-rated profiles.", url: "https://www.google.com/search?q=site:upwork.com/o/profiles", tags: ["X-ray"] },
+            { name: "Freelancer Profile Search", category: "Data", description: "X-ray Freelancer.com to find professionals.", url: "https://www.google.com/search?q=site:freelancer.com/u", tags: ["X-ray"] }
         ];
 
         let currentCategory = 'all';
@@ -303,14 +371,17 @@
         }
 
         function shareFullList() {
-            const fullText = tools.map(t => `${t.name} [${t.category}]: ${t.url}`).join('\n');
+            // Filter unique by name to be safe
+            const uniqueTools = Array.from(new Set(tools.map(a => a.name)))
+                                .map(name => tools.find(a => a.name === name));
+            const fullText = uniqueTools.map(t => `${t.name} [${t.category}]: ${t.url}`).join('\n');
             const el = document.createElement('textarea');
             el.value = fullText;
             document.body.appendChild(el);
             el.select();
             document.execCommand('copy');
             document.body.removeChild(el);
-            showToast(`Exported ${tools.length} high-quality tools!`);
+            showToast(`Exported ${uniqueTools.length} unique tools!`);
         }
 
         function renderTools(filteredTools) {
@@ -319,14 +390,22 @@
             
             grid.innerHTML = '';
             
-            if (filteredTools.length === 0) {
+            // Deduplicate for rendering
+            const renderedIds = new Set();
+            const uniqueToRender = filteredTools.filter(t => {
+                if (renderedIds.has(t.name)) return false;
+                renderedIds.add(t.name);
+                return true;
+            });
+            
+            if (uniqueToRender.length === 0) {
                 emptyState.classList.remove('hidden');
                 return;
             } else {
                 emptyState.classList.add('hidden');
             }
 
-            filteredTools.forEach(tool => {
+            uniqueToRender.forEach(tool => {
                 const card = document.createElement('div');
                 card.className = "tool-card rounded-2xl p-6 flex flex-col h-full";
                 
@@ -355,7 +434,7 @@
                         </div>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3 leading-tight tracking-tight">${tool.name}</h3>
-                    <p class="text-slate-400 text-sm mb-8 flex-grow leading-relaxed line-clamp-3">${tool.description}</p>
+                    <div class="text-slate-400 text-sm mb-8 flex-grow leading-relaxed line-clamp-3">${tool.description}</div>
                     <div class="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-slate-800/50">
                         ${tool.tags.map(tag => `<span class="bg-slate-800/40 text-slate-500 px-2 py-0.5 rounded text-[9px] font-bold border border-slate-700/50 uppercase tracking-tighter">${tag}</span>`).join('')}
                     </div>
