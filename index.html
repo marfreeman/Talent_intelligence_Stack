@@ -55,7 +55,7 @@
             color: #fff;
             text-align: center;
             border-radius: 12px;
-            padding: 16px;
+            padding: 166px;
             position: fixed;
             z-index: 100;
             left: 50%;
@@ -115,6 +115,7 @@
             
             <div class="flex flex-wrap gap-2" id="categoryFilters">
                 <button class="category-pill active px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="all">All</button>
+                <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="SERP">SERP</button>
                 <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="AI tools.">AI tools</button>
                 <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="OSINT">OSINT</button>
                 <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="Engineering">Engineering</button>
@@ -139,14 +140,17 @@
 
         <!-- Footer -->
         <footer class="mt-24 py-16 border-t border-slate-900 text-center">
-            <p class="text-slate-500 font-semibold tracking-widest uppercase text-xs">Talent Intelligence Stack v4.6 • Verified & Custom Research Tools</p>
+            <p class="text-slate-500 font-semibold tracking-widest uppercase text-xs">Talent Intelligence Stack v4.9 • Verified & Custom Research Tools</p>
         </footer>
     </div>
 
     <script>
         const tools = [
-            // --- CUSTOM TOOLS (MARTIN FREEMAN) ---
-            { name: "LeadSync Search", category: "Intel", description: "Martin Freeman's multi-area search tool for broad discovery across leads, technical talent, and corporate intelligence.", url: "https://marfreeman.github.io/LeadSync-Search/", tags: ["Custom", "Multi-Area", "LeadGen"] },
+            // --- CUSTOM TOOLS (MARTIN FREEMAN) - ALWAYS FIRST ---
+            { name: "LeadSync Search", category: "Intel", description: "<span class='text-base font-bold text-slate-200'>Martin Freeman's</span> multi-area search tool for broad discovery across leads, technical talent, and corporate intelligence.", url: "https://marfreeman.github.io/LeadSync-Search/", tags: ["Custom", "Multi-Area", "LeadGen"] },
+
+            // --- SERP TOOLS ---
+            { name: "Devaka Tools", category: "SERP", description: "A javascript bookmarklet developed for SEOs, helping them auditing a websites.", url: "https://devakatalk.com/devaka-tools/", tags: ["SERP", "Bookmarklet", "SEO Audit"] },
 
             // --- AI TOOLS ---
             { name: "NotebookLM Prompts", category: "AI tools.", description: "Master collection of prompts for Google's NotebookLM to synthesize sourcing research.", url: "https://github.com/serenakeyitan/awesome-notebookLM-prompts", tags: ["AI", "Prompts"] },
@@ -327,6 +331,7 @@
                 card.className = "tool-card rounded-2xl p-6 flex flex-col h-full";
                 
                 let catStyle = "bg-slate-800 text-slate-300";
+                if (tool.category === 'SERP') catStyle = "bg-yellow-500/10 text-yellow-400 border-yellow-500/20";
                 if (tool.category === 'AI tools.') catStyle = "bg-cyan-500/10 text-cyan-400 border-cyan-500/20";
                 if (tool.category === 'Reddit') catStyle = "bg-orange-500/10 text-orange-400 border-orange-500/20";
                 if (tool.category === 'OSINT') catStyle = "bg-blue-500/10 text-blue-400 border-blue-500/20";
