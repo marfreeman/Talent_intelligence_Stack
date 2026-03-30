@@ -108,7 +108,7 @@
         <!-- Controls -->
         <div class="mb-10 sticky top-4 z-40 bg-slate-950/80 backdrop-blur-xl p-6 rounded-2xl border border-slate-800 shadow-2xl flex flex-col gap-6">
             <div class="relative w-full">
-                <input type="text" id="searchInput" placeholder="search 180+ high quality tools" 
+                <input type="text" id="searchInput" placeholder="search 220+ high quality tools & resources" 
                     class="w-full pl-14 pr-4 py-4 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-lg"
                     onkeyup="filterTools()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-5 top-5 h-6 w-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -118,6 +118,8 @@
             
             <div class="flex flex-wrap gap-2" id="categoryFilters">
                 <button class="category-pill active px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="all">All</button>
+                <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="Productivity">Productivity</button>
+                <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="Learning">Learning</button>
                 <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="AI tools.">AI tools</button>
                 <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="OSINT">OSINT</button>
                 <button class="category-pill px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all" data-category="SERP">SERP</button>
@@ -143,77 +145,101 @@
 
         <!-- Footer -->
         <footer class="mt-24 py-16 border-t border-slate-900 text-center">
-            <p class="text-slate-500 font-semibold tracking-widest uppercase text-xs">Talent Intelligence Stack v5.6 • 185 Unique Verified Tools</p>
+            <p class="text-slate-500 font-semibold tracking-widest uppercase text-xs">Talent Intelligence Stack v6.0 • 226 Unique Verified Tools</p>
         </footer>
     </div>
 
     <script>
         const tools = [
-            // --- #1 CUSTOM TOOL (MARTIN FREEMAN) - ALWAYS FIRST ---
-            { name: "LeadSync Search", category: "Intel", description: "<span class='text-lg font-bold text-slate-100'>Martin Freeman's</span> multi-area search tool for broad discovery across leads, technical talent, and corporate intelligence.", url: "https://marfreeman.github.io/LeadSync-Search/", tags: ["Custom", "Multi-Area", "LeadGen"] },
+            // --- #1 CUSTOM TOOL (MARTIN FREEMAN) ---
+            { name: "LeadSync Search", category: "Intel", description: "<span class='text-2xl font-extrabold text-white'>Martin Freeman's</span> FREE multi-area search tool for broad discovery across leads, technical talent, and corporate intelligence.", url: "https://marfreeman.github.io/LeadSync-Search/", tags: ["Custom", "Multi-Area", "LeadGen"] },
+
+            // --- PRODUCTIVITY ---
+            { name: "Jan Tegze Recruitment Tools", category: "Productivity", description: "A massive, curated library of recruitment tools, browser extensions, and resources for recruiters and sourcers.", url: "https://tools.jantegze.com/#/", tags: ["Directory", "Recruitment"] },
+            { name: "Calendly", category: "Productivity", description: "The industry standard for automated meeting scheduling and candidate interview coordination.", url: "https://calendly.com/", tags: ["Scheduling"] },
+            { name: "Clockwise", category: "Productivity", description: "AI-powered calendar assistant that optimizes your team's time and creates blocks for deep sourcing.", url: "https://www.getclockwise.com/", tags: ["Calendar", "AI"] },
+            { name: "Loom", category: "Productivity", description: "Video messaging tool perfect for sending personalized candidate outreach and platform demos.", url: "https://www.loom.com/", tags: ["Video", "Outreach"] },
+            { name: "TextExpander", category: "Productivity", description: "Increase sourcing speed by using shortcuts to insert pre-written boolean strings or outreach templates.", url: "https://textexpander.com/", tags: ["Shortcuts", "Templates"] },
+            { name: "Kaiten", category: "Productivity", description: "Visual management system to organize complex recruiting pipelines and candidate workflows.", url: "https://kaiten.io/", tags: ["Agile", "Pipeline"] },
+            { name: "Boolean Assistant", category: "Productivity", description: "Tool to help generate complex boolean search strings for various talent platforms.", url: "https://wizardcon.com/", tags: ["Boolean"] },
+
+            // --- LEARNING ---
+            { name: "Sourcing Games", category: "Learning", description: "Gamified sourcing challenges to help recruiters sharpen their OSINT and advanced search skills.", url: "https://sourcing.games/", tags: ["Training", "Gamified"] },
+            { name: "Recruiting Brainfood", category: "Learning", description: "Hung Lee's curated weekly newsletter and community for recruitment professionals.", url: "https://www.recruitingbrainfood.com/", tags: ["Newsletter", "Community"] },
+            { name: "SourceCon", category: "Learning", description: "The primary community and resource hub for sourcing professionals globally.", url: "https://www.sourcecon.com/", tags: ["Community", "Events"] },
 
             // --- AI TOOLS ---
+            { name: "Aspect", category: "AI tools.", description: "AI-powered interview intelligence that provides automated note-taking and summaries.", url: "https://aspect.app/", tags: ["Interviews"] },
+            { name: "PromptYourJob", category: "AI tools.", description: "AI search engine that auto-filters job openings based on CV matching.", url: "https://promptyourjob.com/", tags: ["JobSearch"] },
+            { name: "Maily Wizard", category: "AI tools.", description: "AI-driven email generator for crafting high-conversion recruiter outreach.", url: "https://mailywizard.com/", tags: ["Outreach"] },
+            { name: "VideoGlancer", category: "AI tools.", description: "AI tool that summarizes YouTube videos into structured PDFs.", url: "https://videoglancer.com/", tags: ["Video"] },
             { name: "NotebookLM Prompts", category: "AI tools.", description: "Master collection of prompts for Google's NotebookLM to synthesize sourcing research.", url: "https://github.com/serenakeyitan/awesome-notebookLM-prompts", tags: ["AI", "Prompts"] },
-            { name: "Alrite AI", category: "AI tools.", description: "AI-powered speech-to-text and translation tool for audio and video processing.", url: "https://alrite.io/ai/", tags: ["Transcription"] },
-            { name: "Andi Search", category: "AI tools.", description: "Next-generation generative search engine providing direct answers and summaries.", url: "https://andisearch.com/", tags: ["Search", "LLM"] },
-            { name: "AppSheet AI", category: "AI tools.", description: "Google's no-code platform to build custom AI-powered apps from your data.", url: "https://about.appsheet.com/home/", tags: ["No-Code"] },
-            { name: "Aragon AI", category: "AI tools.", description: "Professional AI headshot generator for LinkedIn and resume optimization.", url: "https://www.aragon.ai/", tags: ["Headshots"] },
-            { name: "Atlas Recruitment", category: "AI tools.", description: "Autonomous AI sourcing and scheduling agent for recruitment teams.", url: "https://www.recruitwithatlas.com/", tags: ["Agent"] },
+            { name: "SourceWhale", category: "AI tools.", description: "Hyper-personalized multi-channel outreach platform.", url: "https://sourcewhale.com/", tags: ["Automation"] },
+            { name: "Eightfold.ai", category: "AI tools.", description: "Enterprise talent intelligence platform using skills-based matching.", url: "https://eightfold.ai/", tags: ["Enterprise"] },
+            { name: "Loxo", category: "AI tools.", description: "All-in-one recruiting CRM and sourcing platform with automated engagement.", url: "https://loxo.co/", tags: ["CRM"] },
+            { name: "Humanly", category: "AI tools.", description: "Conversational AI for automating candidate screening and scheduling.", url: "https://humanly.io/", tags: ["Conversational"] },
+            { name: "Recruiterflow", category: "AI tools.", description: "Modern CRM and ATS with advanced automation workflows for agencies.", url: "https://recruiterflow.com/", tags: ["ATS"] },
+            { name: "Interseller", category: "AI tools.", description: "Email sequencing platform that finds contact data.", url: "https://www.interseller.io/", tags: ["Sequences"] },
+            { name: "Alrite AI", category: "AI tools.", description: "AI-powered speech-to-text and translation tool.", url: "https://alrite.io/ai/", tags: ["Transcription"] },
+            { name: "Andi Search", category: "AI tools.", description: "Generative search engine providing summaries.", url: "https://andisearch.com/", tags: ["Search"] },
+            { name: "AppSheet AI", category: "AI tools.", description: "Google's no-code platform to build custom apps.", url: "https://about.appsheet.com/home/", tags: ["No-Code"] },
+            { name: "Aragon AI", category: "AI tools.", description: "Professional AI headshot generator for LinkedIn.", url: "https://www.aragon.ai/", tags: ["Headshots"] },
+            { name: "Atlas Recruitment", category: "AI tools.", description: "Autonomous AI sourcing and scheduling agent.", url: "https://www.recruitwithatlas.com/", tags: ["Agent"] },
             { name: "AutoGPT", category: "AI tools.", description: "Autonomous GPT-4 experiments focused on task completion.", url: "https://autogpt.net/", tags: ["Autonomous"] },
-            { name: "Bardeen AI", category: "AI tools.", description: "Workflow automation tool for scraping data and managing sourcing tasks.", url: "https://www.bardeen.ai/", tags: ["Automation"] },
+            { name: "Bardeen AI", category: "AI tools.", description: "Workflow automation tool for scraping and tasks.", url: "https://www.bardeen.ai/", tags: ["Automation"] },
             { name: "Bland AI", category: "AI tools.", description: "Conversational AI for phone calls and candidate screening.", url: "https://www.bland.ai/", tags: ["Voice"] },
-            { name: "Braintrust", category: "AI tools.", description: "AI-driven talent network for technical and design specialists.", url: "https://www.usebraintrust.com/", tags: ["Network"] },
-            { name: "BrightHire", category: "AI tools.", description: "Interview intelligence platform using AI to record and summarize candidate calls.", url: "https://brighthire.com/", tags: ["Interviews"] },
-            { name: "Carv AI", category: "AI tools.", description: "AI assistant for recruiters that automates meeting notes and summaries.", url: "https://www.carv.com/", tags: ["Assistant"] },
-            { name: "ChatGPT", category: "AI tools.", description: "Definitive LLM by OpenAI for creative writing, coding, and research.", url: "https://chatgpt.com/auth/login", tags: ["LLM"] },
-            { name: "Clay", category: "AI tools.", description: "AI-augmented relationship manager and data enrichment platform.", url: "https://www.clay.com/", tags: ["CRM", "AI"] },
-            { name: "Clay Earth", category: "AI tools.", description: "Personal and professional network manager powered by AI.", url: "https://clay.earth/", tags: ["Networking"] },
-            { name: "ConverzAI", category: "AI tools.", description: "Voice AI for high-volume recruitment screening calls.", url: "https://www.converzai.com/", tags: ["Voice"] },
-            { name: "Cronofy AI", category: "AI tools.", description: "AI scheduling assistant for complex interview loops.", url: "https://www.cronofy.com/", tags: ["Scheduling"] },
-            { name: "DeepSeek", category: "AI tools.", description: "High-performance reasoning and coding LLM for technical research.", url: "https://www.deepseek.com/", tags: ["LLM", "Tech"] },
-            { name: "ElevenLabs", category: "AI tools.", description: "AI voice generation and cloning for outreach scripts.", url: "https://elevenlabs.io/", tags: ["Voice"] },
-            { name: "Engage AI", category: "AI tools.", description: "Tool for writing relevant LinkedIn comments to warm up prospects.", url: "https://engage-ai.co/", tags: ["LinkedIn"] },
-            { name: "Epsilla", category: "AI tools.", description: "Vector database platform to build custom AI search over data.", url: "https://cloud.epsilla.com/", tags: ["RAG"] },
-            { name: "Fireflies.ai", category: "AI tools.", description: "AI voice assistant that transcribes and searches meeting notes.", url: "https://fireflies.ai/", tags: ["Transcription"] },
-            { name: "FlowiseAI", category: "AI tools.", description: "Low-code UI to build customized LLM orchestration flows.", url: "https://flowiseai.com/", tags: ["Workflow"] },
+            { name: "Braintrust", category: "AI tools.", description: "AI-driven talent network for technical specialists.", url: "https://www.usebraintrust.com/", tags: ["Network"] },
+            { name: "BrightHire", category: "AI tools.", description: "Interview intelligence platform using AI.", url: "https://brighthire.com/", tags: ["Interviews"] },
+            { name: "Carv AI", category: "AI tools.", description: "AI assistant for recruiters that automates notes.", url: "https://www.carv.com/", tags: ["Assistant"] },
+            { name: "ChatGPT", category: "AI tools.", description: "Definitive LLM by OpenAI for writing and research.", url: "https://chatgpt.com/auth/login", tags: ["LLM"] },
+            { name: "Clay AI", category: "AI tools.", description: "AI relationship manager and data enrichment platform.", url: "https://www.clay.com/", tags: ["CRM"] },
+            { name: "Clay Earth", category: "AI tools.", description: "Network manager powered by AI for professionals.", url: "https://clay.earth/", tags: ["Networking"] },
+            { name: "ConverzAI", category: "AI tools.", description: "Voice AI for recruitment screening calls.", url: "https://www.converzai.com/", tags: ["Voice"] },
+            { name: "Cronofy AI", category: "AI tools.", description: "AI scheduling assistant for interview loops.", url: "https://www.cronofy.com/", tags: ["Scheduling"] },
+            { name: "DeepSeek", category: "AI tools.", description: "High-performance reasoning LLM for technical research.", url: "https://www.deepseek.com/", tags: ["LLM"] },
+            { name: "ElevenLabs", category: "AI tools.", description: "AI voice generation and cloning for outreach.", url: "https://elevenlabs.io/", tags: ["Voice"] },
+            { name: "Engage AI", category: "AI tools.", description: "AI for writing relevant LinkedIn comments.", url: "https://engage-ai.co/", tags: ["LinkedIn"] },
+            { name: "Epsilla", category: "AI tools.", description: "Vector database platform for custom AI search.", url: "https://cloud.epsilla.com/", tags: ["RAG"] },
+            { name: "Fireflies.ai", category: "AI tools.", description: "AI assistant that transcribes meeting notes.", url: "https://fireflies.ai/", tags: ["Transcription"] },
+            { name: "FlowiseAI", category: "AI tools.", description: "Low-code UI to build LLM orchestration flows.", url: "https://flowiseai.com/", tags: ["Workflow"] },
             { name: "Folk AI", category: "AI tools.", description: "Modern AI-integrated CRM for pipeline management.", url: "https://www.folk.app/", tags: ["CRM"] },
-            { name: "Gemini", category: "AI tools.", description: "Google's multimodal AI for research and data analysis.", url: "https://gemini.google.com/", tags: ["Google"] },
-            { name: "Glider AI", category: "AI tools.", description: "AI-powered skill assessments and technical proctoring.", url: "https://glider.ai/", tags: ["Assessment"] },
-            { name: "GoodTime", category: "AI tools.", description: "Interview scheduling platform using AI availability matching.", url: "https://goodtime.io/", tags: ["Scheduling"] },
-            { name: "GPT for Sheets", category: "AI tools.", description: "ChatGPT and Gemini integration for Sheets and Docs.", url: "https://workspace.google.com/marketplace/app/gpt_for_sheets_and_docs/677318054654", tags: ["Productivity"] },
-            { name: "GPT Formula", category: "AI tools.", description: "AI assistant to write complex Excel and Sheets formulas.", url: "https://chromewebstore.google.com/detail/gpt-formula/kcleeabpbbmbcfgfdhobcincoeliffba", tags: ["Excel"] },
-            { name: "Groq", category: "AI tools.", description: "Ultra-fast AI inference engine for running LLMs at scale.", url: "https://groq.com/", tags: ["Speed"] },
-            { name: "hackajob", category: "AI tools.", description: "AI-powered tech hiring marketplace for employers.", url: "https://hackajob.com/employer", tags: ["Marketplace"] },
-            { name: "HeyGen", category: "AI tools.", description: "Create personalized video outreach at scale with AI avatars.", url: "https://www.heygen.com/", tags: ["Video"] },
-            { name: "HitPaw", category: "AI tools.", description: "AI-driven video and photo enhancement tool.", url: "https://www.hitpaw.com/hitpaw-video-enhancer.html", tags: ["Visual"] },
-            { name: "Jenni AI", category: "AI tools.", description: "AI writing assistant optimized for research content.", url: "https://jenni.ai/", tags: ["Writing"] },
+            { name: "Gemini", category: "AI tools.", description: "Google's multimodal AI for research and analysis.", url: "https://gemini.google.com/", tags: ["Google"] },
+            { name: "Glider AI", category: "AI tools.", description: "AI-powered skill assessments and proctoring.", url: "https://glider.ai/", tags: ["Assessment"] },
+            { name: "GoodTime", category: "AI tools.", description: "Interview scheduling platform using AI matching.", url: "https://goodtime.io/", tags: ["Scheduling"] },
+            { name: "GPT for Sheets", category: "AI tools.", description: "ChatGPT/Gemini integration for Sheets.", url: "https://workspace.google.com/marketplace/app/gpt_for_sheets_and_docs/677318054654", tags: ["Productivity"] },
+            { name: "GPT Formula", category: "AI tools.", description: "AI assistant to write complex Sheets formulas.", url: "https://chromewebstore.google.com/detail/gpt-formula/kcleeabpbbmbcfgfdhobcincoeliffba", tags: ["Excel"] },
+            { name: "Groq", category: "AI tools.", description: "Ultra-fast AI inference engine for running LLMs.", url: "https://groq.com/", tags: ["Speed"] },
+            { name: "hackajob", category: "AI tools.", description: "AI-powered tech hiring marketplace.", url: "https://hackajob.com/employer", tags: ["Marketplace"] },
+            { name: "HeyGen", category: "AI tools.", description: "Create video outreach at scale with AI avatars.", url: "https://www.heygen.com/", tags: ["Video"] },
+            { name: "HitPaw", category: "AI tools.", description: "AI video and photo enhancement tool.", url: "https://www.hitpaw.com/hitpaw-video-enhancer.html", tags: ["Visual"] },
+            { name: "Jenni AI", category: "AI tools.", description: "AI writing assistant optimized for research.", url: "https://jenni.ai/", tags: ["Writing"] },
             { name: "Jobin.cloud", category: "AI tools.", description: "AI sourcing and LinkedIn automation dashboard.", url: "https://www.jobin.cloud/", tags: ["LinkedIn"] },
-            { name: "Keymate AI", category: "AI tools.", description: "Advanced AI search assistant that indexes personal data.", url: "https://www.keymate.ai/", tags: ["Search"] },
+            { name: "Keymate AI", category: "AI tools.", description: "Advanced AI search that indexes personal data.", url: "https://www.keymate.ai/", tags: ["Search"] },
             { name: "Kickresume AI", category: "AI tools.", description: "AI-powered resume and cover letter builder.", url: "https://www.kickresume.com/en/", tags: ["Resume"] },
             { name: "Kula AI", category: "AI tools.", description: "Referral and sourcing automation platform.", url: "https://www.kula.ai/", tags: ["Referrals"] },
-            { name: "Magical AI", category: "AI tools.", description: "No-code automation agent for browser data syncing.", url: "https://chromewebstore.google.com/detail/magical-ai-agent-for-auto/iibninhmiggehlcdolcilmhacighjamp", tags: ["Productivity"] },
+            { name: "Magical AI", category: "AI tools.", description: "No-code automation for browser data syncing.", url: "https://chromewebstore.google.com/detail/magical-ai-agent-for-auto/iibninhmiggehlcdolcilmhacighjamp", tags: ["Productivity"] },
             { name: "Metaview", category: "AI tools.", description: "AI-powered interview notes and summaries.", url: "https://www.metaview.ai/", tags: ["Interviews"] },
             { name: "Midjourney", category: "AI tools.", description: "Premier AI image generation platform.", url: "https://www.midjourney.com/app", tags: ["Art"] },
-            { name: "Miro AI", category: "AI tools.", description: "AI assistant for mind maps and visual research.", url: "https://miro.com/ai/", tags: ["Design"] },
-            { name: "n8n AI", category: "AI tools.", description: "Build sophisticated AI pipelines with workflow automation.", url: "https://n8n.io/", tags: ["Workflow"] },
+            { name: "Miro AI", category: "AI tools.", description: "AI assistant for mind maps and research.", url: "https://miro.com/ai/", tags: ["Design"] },
+            { name: "n8n AI", category: "AI tools.", description: "Build AI pipelines with workflow automation.", url: "https://n8n.io/", tags: ["Workflow"] },
             { name: "Napkin AI", category: "AI tools.", description: "Turns text into visuals and diagrams for reports.", url: "https://www.napkin.ai/", tags: ["Visuals"] },
-            { name: "Otter.ai", category: "AI tools.", description: "Real-time meeting transcription and AI summaries.", url: "https://otter.ai/", tags: ["Transcription"] },
-            { name: "Owler ChatGPT Plugin", category: "AI tools.", description: "Real-time company intelligence integrated with ChatGPT.", url: "https://corp.owler.com/blog/owler-launches-chatgpt-plugin-", tags: ["Intel"] },
-            { name: "PeopleGPT (Juicebox)", category: "AI tools.", description: "AI-driven people search engine using semantic queries.", url: "https://chat.juicebox.work/", tags: ["Search"] },
-            { name: "Perplexity", category: "AI tools.", description: "AI search companion providing sourced, real-time answers.", url: "https://www.perplexity.ai/", tags: ["Search"] },
+            { name: "Otter.ai", category: "AI tools.", description: "Real-time transcription and AI summaries.", url: "https://otter.ai/", tags: ["Transcription"] },
+            { name: "Owler ChatGPT Plugin", category: "AI tools.", description: "Company intelligence integrated with ChatGPT.", url: "https://corp.owler.com/blog/owler-launches-chatgpt-plugin-", tags: ["Intel"] },
+            { name: "PeopleGPT", category: "AI tools.", description: "AI-driven people search engine using semantic queries.", url: "https://chat.juicebox.work/", tags: ["Search"] },
+            { name: "Perplexity", category: "AI tools.", description: "AI search companion providing real-time answers.", url: "https://www.perplexity.ai/", tags: ["Search"] },
             { name: "Phind", category: "AI tools.", description: "Generative search engine built for developers.", url: "https://www.phind.com/", tags: ["Devs"] },
             { name: "Poetry HR", category: "AI tools.", description: "AI recruiter workspace for sourcing operations.", url: "https://www.poetryhr.com/", tags: ["Workspace"] },
-            { name: "Popp AI", category: "AI tools.", description: "AI agent for candidate screening and processing.", url: "https://www.joinpopp.com/", tags: ["Agent"] },
+            { name: "Popp AI", category: "AI tools.", description: "AI agent for candidate screening.", url: "https://www.joinpopp.com/", tags: ["Agent"] },
             { name: "Prog.ai", category: "AI tools.", description: "Developer sourcing using GitHub repo history.", url: "https://www.getprog.ai/", tags: ["Devs"] },
             { name: "ReachOut AI", category: "AI tools.", description: "Automated video personalization for outreach.", url: "https://reachout.ai/", tags: ["Outreach"] },
-            { name: "RecruitBot", category: "AI tools.", description: "Combines 600M+ profiles with AI preference matching.", url: "https://recruitbot.com/", tags: ["Database"] },
-            { name: "RoundOne", category: "AI tools.", description: "AI-driven technical interviewing and assessments.", url: "https://roundone.ai/", tags: ["Interviews"] },
+            { name: "RecruitBot", category: "AI tools.", description: "Combines 600M+ profiles with AI matching.", url: "https://recruitbot.com/", tags: ["Database"] },
+            { name: "RoundOne", category: "AI tools.", description: "AI-driven technical interviewing assessments.", url: "https://roundone.ai/", tags: ["Interviews"] },
             { name: "Scotty AI", category: "AI tools.", description: "Intelligent TA bot for high-volume engagement.", url: "https://scottytechnologies.com/scotty-ai-for-talent-acquisition/", tags: ["Bot"] },
             { name: "Scribe AI", category: "AI tools.", description: "Documents sourcing processes into visual guides.", url: "https://scribehow.com/scribe-ai", tags: ["Docs"] },
-            { name: "Secta AI", category: "AI tools.", description: "Generates high-end business portraits with AI.", url: "https://secta.ai/", tags: ["Headshots"] },
+            { name: "Secta AI", category: "AI tools.", description: "Generates portraits with AI photography.", url: "https://secta.ai/", tags: ["Headshots"] },
             { name: "SheetAI", category: "AI tools.", description: "Connect AI to Google Sheets for data cleanup.", url: "https://www.sheetai.app/", tags: ["Sheets"] },
             { name: "Skillate", category: "AI tools.", description: "AI matching engine for screening and ranking.", url: "https://www.skillate.com/", tags: ["Matching"] },
-            { name: "Sourcicle", category: "AI tools.", description: "Sourcing automation platform for outbound recruiters.", url: "https://www.sourcicle.com/", tags: ["Automation"] },
+            { name: "Sourcicle", category: "AI tools.", description: "Sourcing automation for outbound recruiters.", url: "https://www.sourcicle.com/", tags: ["Automation"] },
             { name: "Tactiq", category: "AI tools.", description: "Real-time transcriptions for recruiter calls.", url: "https://tactiq.io/roles/transcripts-for-recruiters", tags: ["Transcription"] },
             { name: "Talent Protocol", category: "AI tools.", description: "On-chain talent search and aggregator.", url: "https://app.talentprotocol.com/search", tags: ["Identity"] },
             { name: "Tengai", category: "AI tools.", description: "Unbiased AI interview bot for pre-screening.", url: "https://tengai.io/product", tags: ["Interviews"] },
@@ -222,7 +248,7 @@
             { name: "TimelinesAI", category: "AI tools.", description: "AI WhatsApp management for recruiter teams.", url: "https://timelines.ai/", tags: ["Messaging"] },
             { name: "Torre AI", category: "AI tools.", description: "Talent network using AI for job matching.", url: "https://torre.ai/", tags: ["Network"] },
             { name: "Verbi", category: "AI tools.", description: "Meeting summarization and action items.", url: "https://goverbi.com/", tags: ["Meetings"] },
-            { name: "VoxScript", category: "AI tools.", description: "ChatGPT plugin for YouTube and web transcript search.", url: "https://chatgpt.com/g/g-g24EzkDta-voxscript", tags: ["Video"] },
+            { name: "VoxScript", category: "AI tools.", description: "ChatGPT plugin for YouTube transcript search.", url: "https://chatgpt.com/g/g-g24EzkDta-voxscript", tags: ["Video"] },
             { name: "Waalaxy", category: "AI tools.", description: "AI-powered LinkedIn lead generation automation.", url: "https://www.waalaxy.com/?o=nsdkvguepfqz", tags: ["LinkedIn"] },
             { name: "Wolfram Alpha", category: "AI tools.", description: "Computational intelligence engine for deep data.", url: "https://www.wolframalpha.com/", tags: ["Data"] },
             { name: "You.com", category: "AI tools.", description: "AI-integrated customized search engine.", url: "https://you.com/", tags: ["Search"] },
@@ -256,6 +282,8 @@
             { name: "411.com", category: "OSINT", description: "Standard white pages for US individuals.", url: "https://www.411.com/", tags: ["White Pages"] },
             { name: "US Phone Book", category: "OSINT", description: "Names and addresses from US phone numbers.", url: "https://www.usphonebook.com/", tags: ["Phone"] },
             { name: "DomainBigData", category: "OSINT", description: "Domain research and WHOIS history.", url: "https://domainbigdata.com/", tags: ["Domain Intel"] },
+            { name: "LinkFree", category: "OSINT", description: "Open-source identity linking tool.", url: "https://linkfree.io/", tags: ["Identity"] },
+            { name: "SocialCatfish", category: "OSINT", description: "Deep identity verification through images.", url: "https://socialcatfish.com/", tags: ["Verification"] },
 
             // --- SERP TOOLS ---
             { name: "Devaka Tools", category: "SERP", description: "A javascript bookmarklet developed for SEOs, helping them auditing a websites.", url: "https://devakatalk.com/devaka-tools/", tags: ["SERP", "Audit"] },
@@ -268,9 +296,13 @@
             { name: "Reddit Resume X-Ray", category: "Reddit", description: "Search for resumes/portfolios on Reddit.", url: "https://www.google.com/search?q=site:reddit.com+(resume+OR+portfolio+OR+CV)", tags: ["X-ray"] },
 
             // --- ENGINEERING ---
+            { name: "TalentSignals", category: "Engineering", description: "Free tool to source developers across platforms.", url: "https://talentsignals.io/", tags: ["Sourcing", "Free"] },
+            { name: "Octohunt", category: "Engineering", description: "Search engine to find developers on GitHub.", url: "https://octohunt.com/", tags: ["GitHub"] },
+            { name: "GlossaryTech", category: "Engineering", description: "Technical recruitment glossary for terms.", url: "https://glossarytech.com/", tags: ["Education"] },
+            { name: "Piazza", category: "Engineering", description: "Social learning platform for university sourcing.", url: "https://piazza.com/", tags: ["University"] },
             { name: "AmazingHiring", category: "Engineering", description: "Search across GitHub, GitLab, and Kaggle.", url: "https://amazinghiring.com", tags: ["Aggregator"] },
             { name: "GitHub Advanced Search", category: "Engineering", description: "Filters for language, stars, and commits.", url: "https://github.com/search/advanced", tags: ["Devs"] },
-            { name: "StackShare", category: "Engineering", description: "Source engineers by mapping technology stacks.", url: "https://stackshare.io/", tags: ["Stack Mapping"] },
+            { name: "StackShare", category: "Engineering", description: "Source engineers by mapping tech stacks.", url: "https://stackshare.io/", tags: ["Stack Mapping"] },
             { name: "Cord.io", category: "Engineering", description: "Verified tech talent actively open to roles.", url: "https://cord.co", tags: ["Active"] },
             { name: "Human Predictions", category: "Engineering", description: "AI move-probability for tech talent.", url: "https://www.humanpredictions.io/", tags: ["Predictive"] },
             { name: "Exercism Profiles", category: "Engineering", description: "Find coders by mentor and contribution history.", url: "https://exercism.io/profiles", tags: ["Coding"] },
@@ -279,8 +311,16 @@
             { name: "StackOverflow X-Ray", category: "Engineering", description: "Source high-karma users in specific tags.", url: "https://www.google.com/search?q=site:stackoverflow.com/users", tags: ["Community"] },
             { name: "Codeable", category: "Engineering", description: "WordPress and PHP expert community.", url: "https://codeable.io/developers", tags: ["PHP"] },
             { name: "Github Email Finder", category: "Engineering", description: "Extract emails from GitHub commits.", url: "https://chrome.google.com/webstore/detail/github-emails-finder-expo/ocidmelfjjmbibmhlnooildbiookoebh", tags: ["Extension"] },
+            { name: "Searchcode", category: "Engineering", description: "Search 20 billion lines of code to find authors.", url: "https://searchcode.com/", tags: ["Code Search"] },
 
             // --- DATA & CONTACT ---
+            { name: "Tomba.io", category: "Data", description: "B2B email finder and verification platform.", url: "https://tomba.io/", tags: ["Email"] },
+            { name: "Prospectoo", category: "Data", description: "B2B lead generation and contact extraction.", url: "https://prospectoo.com/", tags: ["Leads"] },
+            { name: "LeadNear", category: "Data", description: "LinkedIn tool for phone numbers and emails.", url: "https://leadnear.com/", tags: ["LinkedIn"] },
+            { name: "Rapid Scrapper", category: "Data", description: "Automated data extraction tool.", url: "https://rapidscraper.com/", tags: ["Scraping"] },
+            { name: "FullContact", category: "Data", description: "Identity resolution and enrichment platform.", url: "https://www.fullcontact.com/", tags: ["Enrichment"] },
+            { name: "Quickli", category: "Data", description: "Advanced LinkedIn search and data utility.", url: "https://quickli.io/", tags: ["LinkedIn"] },
+            { name: "SalesQL", category: "Data", description: "Highly accurate LinkedIn email finder.", url: "https://salesql.com/", tags: ["Email"] },
             { name: "ContactOut", category: "Data", description: "Accurate email/phone finder for LinkedIn.", url: "https://contactout.com", tags: ["Premium"] },
             { name: "SignalHire", category: "Data", description: "Verified contact data and talent analytics.", url: "https://signalhire.com", tags: ["Enrichment"] },
             { name: "Apollo.io", category: "Data", description: "Massive 270M+ B2B contact database.", url: "https://apollo.io", tags: ["Database"] },
@@ -301,8 +341,17 @@
             { name: "Wiza", category: "Data", description: "Verified emails from LinkedIn Navigator.", url: "https://wiza.co/", tags: ["LinkedIn"] },
             { name: "GetProspect", category: "Data", description: "LinkedIn email finder and lead management.", url: "https://getprospect.com/", tags: ["Leads"] },
             { name: "Kaspr", category: "Data", description: "Get contact info (phone/email) from LinkedIn.", url: "https://www.kaspr.io/", tags: ["Sales"] },
+            { name: "Improver", category: "Data", description: "AI-powered tool for personal email addresses.", url: "https://improver.io/", tags: ["Email"] },
+            { name: "LeadLeaper", category: "Data", description: "Finds business email for LinkedIn members.", url: "https://leadleaper.com/", tags: ["LinkedIn"] },
+            { name: "Aeroleads", category: "Data", description: "Lead generation and B2B discovery tool.", url: "https://aeroleads.com/", tags: ["Prospecting"] },
+            { name: "Dripify", category: "Data", description: "LinkedIn automation for leads/outreach.", url: "https://dripify.io/", tags: ["Automation"] },
 
             // --- INTEL & MARKET ---
+            { name: "Recruit CRM", category: "Intel", description: "ATS and CRM platform for staffing agencies.", url: "https://recruitcrm.io/", tags: ["ATS"] },
+            { name: "Cangrade", category: "Intel", description: "Assessment platform for success and retention.", url: "https://www.cangrade.com/", tags: ["Assessment"] },
+            { name: "Crosschq", category: "Intel", description: "Hiring intelligence focused on reference checks.", url: "https://www.crosschq.com/", tags: ["References"] },
+            { name: "Justice Map", category: "Intel", description: "Map of race and income for sourcing diversity.", url: "http://www.justicemap.org/", tags: ["Diversity"] },
+            { name: "SetMore Scheduling", category: "Intel", description: "Free online scheduling software for interviews.", url: "https://www.setmore.com/", tags: ["Scheduling"] },
             { name: "Levels.fyi", category: "Intel", description: "Standard for benchmarking salaries and leveling.", url: "https://www.levels.fyi/", tags: ["Salary"] },
             { name: "Owler", category: "Intel", description: "Competitive intelligence on private companies.", url: "https://www.owler.com/", tags: ["Intel"] },
             { name: "Crunchbase", category: "Intel", description: "Startup funding and headcount news.", url: "https://www.crunchbase.com/", tags: ["Funding"] },
@@ -319,8 +368,10 @@
             { name: "Winmo", category: "Intel", description: "Decision-maker contact discovery.", url: "https://www.winmo.com/", tags: ["Sales Intel"] },
             { name: "Seamless.ai", category: "Intel", description: "Real-time search engine for B2B contact info.", url: "https://seamless.ai/", tags: ["Sales"] },
             { name: "Crystal Knows", category: "Intel", description: "AI personality profiles for communication.", url: "https://www.crystalknows.com/", tags: ["Personality"] },
+            { name: "Hired.com", category: "Intel", description: "Marketplace where companies apply to talent.", url: "https://hired.com/", tags: ["Tech Marketplace"] },
 
             // --- VERIFY ---
+            { name: "Valid Email", category: "Verify", description: "Email validation service to reduce bounce rates.", url: "https://valid.email/", tags: ["Email"] },
             { name: "Antideo", category: "Verify", description: "Phone, email, and IP validation.", url: "https://www.antideo.com/", tags: ["Validation"] },
             { name: "HaveIBeenPwned", category: "Verify", description: "Check email breach history.", url: "https://haveibeenpwned.com/", tags: ["Age"] },
             { name: "MillionVerifier", category: "Verify", description: "Bulk email verification for lists.", url: "https://www.millionverifier.com/", tags: ["Bulk"] },
@@ -331,11 +382,14 @@
             { name: "National Cellular Directory", category: "Verify", description: "Phone numbers and background data.", url: "https://www.nationalcellulardirectory.com/", tags: ["Phone"] },
 
             // --- OUTREACH ---
+            { name: "Multi Highlight", category: "Outreach", description: "Browser utility to highlight multiple words for screening.", url: "https://chrome.google.com/webstore/detail/multi-highlight/pbdpajcdgpealbmocpbcenocbkbcjnbe", tags: ["Screening"] },
             { name: "Textio", category: "Outreach", description: "AI writing guide for converting outreach.", url: "https://textio.com/", tags: ["Writing"] },
             { name: "QuillBot", category: "Outreach", description: "AI paraphraser for personalizing templates.", url: "https://quillbot.com/", tags: ["Personalization"] },
             { name: "Readable", category: "Outreach", description: "Readability scoring for clear outreach.", url: "https://readable.com/", tags: ["Clarity"] },
             { name: "Joblint", category: "Outreach", description: "Scan job posts for bias and jargon.", url: "https://github.com/rowanmanning/joblint", tags: ["Review"] },
             { name: "TestSubject", category: "Outreach", description: "Test how subject lines appear on mobile.", url: "https://testsubject.com/", tags: ["Testing"] },
+            { name: "Grammarly", category: "Outreach", description: "Ensure professional candidate communication.", url: "https://www.grammarly.com/", tags: ["Editing"] },
+            { name: "Hemingway", category: "Outreach", description: "App to make your writing bold and clear.", url: "https://hemingwayapp.com/", tags: ["Writing"] },
 
             // --- DESIGN ---
             { name: "Dribbble Hiring", category: "Design", description: "Search designers by skill and hire-status.", url: "https://dribbble.com/hiring", tags: ["Visual"] },
@@ -347,7 +401,7 @@
             { name: "Pinterest Portfolio Search", category: "Design", description: "Source visual artists via Pinterest boards.", url: "https://www.google.com/search?q=site:pinterest.com+portfolio", tags: ["X-ray"] },
 
             // --- MISC & X-RAY ---
-            { name: "LinkedIn Clearance X-Ray", category: "Intel", description: "Source candidates with specific security clearances.", url: "https://www.google.com/search?q=site:linkedin.com/in+%22security+clearance%22", tags: ["Security"] },
+            { name: "LinkedIn Clearance X-Ray", category: "Intel", description: "Source candidates with security clearances.", url: "https://www.google.com/search?q=site:linkedin.com/in+%22security+clearance%22", tags: ["Security"] },
             { name: "FTP Resume Search", category: "Intel", description: "Search for resumes on FTP servers.", url: "https://www.google.com/search?q=intitle:index.of+resume", tags: ["X-ray"] },
             { name: "Conference Attendee X-Ray", category: "Intel", description: "X-ray search for attendee lists.", url: "https://www.google.com/search?q=intitle:attendee.list", tags: ["Events"] },
             { name: "Upwork Profile Search", category: "Data", description: "X-ray Upwork to find high-rated profiles.", url: "https://www.google.com/search?q=site:upwork.com/o/profiles", tags: ["X-ray"] },
@@ -374,7 +428,7 @@
         }
 
         function shareFullList() {
-            // Filter unique by name to be safe
+            // Explicit deduplication to ensure export count is correct
             const uniqueTools = Array.from(new Set(tools.map(a => a.name)))
                                 .map(name => tools.find(a => a.name === name));
             const fullText = uniqueTools.map(t => `${t.name} [${t.category}]: ${t.url}`).join('\n');
@@ -413,6 +467,8 @@
                 card.className = "tool-card rounded-2xl p-6 flex flex-col h-full";
                 
                 let catStyle = "bg-slate-800 text-slate-300";
+                if (tool.category === 'Productivity') catStyle = "bg-blue-500/10 text-blue-400 border-blue-500/20";
+                if (tool.category === 'Learning') catStyle = "bg-purple-500/10 text-purple-400 border-purple-500/20";
                 if (tool.category === 'SERP') catStyle = "bg-yellow-500/10 text-yellow-400 border-yellow-500/20";
                 if (tool.category === 'AI tools.') catStyle = "bg-cyan-500/10 text-cyan-400 border-cyan-500/20";
                 if (tool.category === 'Reddit') catStyle = "bg-orange-500/10 text-orange-400 border-orange-500/20";
