@@ -1,4 +1,4 @@
-# Talent_intelligence_Stack
+# Talent_intelligence_Stack - https://marfreeman.github.io/Talent_intelligence_Stack/
 
 This file is a single-page HTML dashboard for a curated “Talent Intelligence Stack” directory of recruiting/sourcing tools.
 
