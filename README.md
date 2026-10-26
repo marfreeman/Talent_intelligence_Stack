@@ -19,3 +19,5 @@ filter by category such as Productivity, Learning, AI tools, OSINT, SERP, Engine
 Includes a “Export All Tools” button that copies the full list of unique tools to the clipboard
 Displays a toast notification when a link is copied or export is completed
 Uses Tailwind CSS and custom styling for a polished dark UI
+
+No sign-up and free to use
